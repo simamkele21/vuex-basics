@@ -1,31 +1,23 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <div class="counter">{{ $store.state.counter }}</div>
-    <div class="buttons">
-      <button @click="$store.commit('decreaseCounter')">-</button>
-      <button @click="$store.dispatch('increaseCounter')">+</button>
-    </div>
+    <counter />
+    <counter-squared />
+    <buttons />
+    <color-code />
   </div>
 </template>
 
 <script> 
 export default {
 name: 'Home',
-// data() {
-//   return {
-//     counter: 0
-//   }
-// },
 
-// methods: {
-//   decreaseCounter() {
-//   this.counter--
-// },
-// increaseCounter() {
-//   this.counter++
-// }
-// }
+components: {
+  'counter': require('@/components/Counter.vue').defualt,
+  'counter-squared': require('@/components/CounterSquared.vue').defualt,
+  'buttons': require('@/components/Buttons.vue').defualt,
+  'color-code': require('@/components/ColorCode.vue').defualt
+  }
 }
 </script>
  
@@ -41,4 +33,4 @@ name: 'Home',
    width: 100px;
    margin: 0 10px;
  }
- </style>
+ </style> 
